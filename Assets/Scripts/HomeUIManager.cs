@@ -8,13 +8,9 @@ public class HomeUIManager : MonoBehaviour {
 	public void StartGame() {
 		SceneManager.LoadScene ("Level1");
 	}
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void QuitGame() {
+		Application.Quit ();
+
 	}
 }
