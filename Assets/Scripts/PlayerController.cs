@@ -4,49 +4,46 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	private Animator animator;
-	public float speed = 4.0f;
+	public float moveSpeed;
+	private Animator anim;
+	private bool playerMoving;
+	private Vector2 lastMove;
 
 	// Use this for initialization
 	void Start () {
-		animator = this.GetComponent<Animator>();
+		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//Vector to store change in movement.
-		var move = new Vector3();
 
-		/*
-         * Movement:
-         * Player moves using the WASD keys. 
-         */
+		// Check if player is in motion
+		playerMoving = false;
 
-		if (Input.anyKey == false) {
-			animator.SetInteger("Direction", 4);
-		}
-		if (Input.GetKey(KeyCode.A))
+		// Controls player movement
+		if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f )
 		{
-			animator.SetInteger("Direction", 3);
-			move += Vector3.left;
-
+			// Move player based on A, D
+			transform.Translate (new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0f, 0f ));
+			playerMoving = true;
+			// Grabs where player was facing for idle animation
+			lastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
 		}
-		if (Input.GetKey(KeyCode.D))
+		if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f)
 		{
-			animator.SetInteger("Direction", 1);
-			move += Vector3.right;
+			//Move player based on W, D
+			transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0f));
+			playerMoving = true;
+			// Grabs where player was facing for idle animation
+			lastMove = new Vector2(0f, Input.GetAxisRaw("Vertical"));
 		}
-		if (Input.GetKey(KeyCode.W))
-		{
-			animator.SetInteger("Direction", 2);
-			move += Vector3.up;
-		}
-		if (Input.GetKey(KeyCode.S))
-		{
-			animator.SetInteger("Direction", 0);
-			move += Vector3.down;
-		}
-
-		transform.position += move * speed * Time.deltaTime;
+			
+		// Animate player moving
+		anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+		anim.SetFloat("MoveY", Input.GetAxisRaw ("Vertical"));
+		anim.SetBool("PlayerMoving", playerMoving);
+		anim.SetFloat("LastMoveX", lastMove.x);
+		anim.SetFloat("LastMoveY", lastMove.y);
 	}
 }
+
