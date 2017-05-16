@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class helps to spawn enmey at one location, or randomly
 public class EnemySpawner : MonoBehaviour {
 
     public GameObject enemy;
