@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
     //Rigidbody rb;
+	private PhaseSystem phaseSystemRef;
     public Transform target;
     public float moveSpeed = 4f;
     //float direction;
 	// Use this for initialization
 	void Start () {
+		GameObject phaseSystem = GameObject.FindWithTag ("Phase System");
+		this.phaseSystemRef = (PhaseSystem) phaseSystem.GetComponent(typeof(PhaseSystem));
         target = GameObject.FindWithTag("Player").GetComponent<Transform>();
 	}
 	
@@ -20,5 +23,10 @@ public class EnemyMovement : MonoBehaviour {
             transform.Translate(new Vector3(moveSpeed* Time.deltaTime, 0, 0) );
         }
         transform.rotation = Quaternion.identity;
+	}
+
+	public void removeAndDestoy(){		//public for testing
+		phaseSystemRef.removeEnemy (this.gameObject);
+		Destroy (this.gameObject);
 	}
 }
