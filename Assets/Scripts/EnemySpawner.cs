@@ -29,8 +29,9 @@ public class EnemySpawner : MonoBehaviour {
         if (spawnCount < MAX_SPAWN_COUNT && Time.time > nextSpawn)
         {
             nextSpawn = Time.time + spawnRate;
-            randX = Random.Range(-8.4f, 8.4f);
-            whereToSpawn = new Vector2(randX, transform.position.y);
+            // randX = Random.Range(-8.4f, 8.4f);
+            // Let's just spawn at SpawnPool's location for now
+            whereToSpawn = new Vector2(transform.position.x, transform.position.y);
 			spawnEnemy (enemy, whereToSpawn);
 			
         }

@@ -17,9 +17,12 @@ public class EnemyMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        // The enemy will face toward the player
         transform.LookAt(target);
+        // rotate the enemy so it will not "turn face" in 2D game
         transform.Rotate(new Vector3(0,-90,0),Space.Self);
-        if (Vector3.Distance(transform.position,target.position)>1f){//move if distance from target is greater than 1
+        // if the enemy and player has a distance greater than 0.5
+        if (Vector3.Distance(transform.position,target.position)>0.2f){
             transform.Translate(new Vector3(moveSpeed* Time.deltaTime, 0, 0) );
         }
         transform.rotation = Quaternion.identity;
