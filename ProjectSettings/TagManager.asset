@@ -8,6 +8,7 @@ TagManager:
   - Countdown
   - Enemy Spawner
   - CountdownText
+  - Enemy
   layers:
   - Default
   - TransparentFX
