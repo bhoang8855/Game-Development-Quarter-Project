@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
-		debug = true;		//change if not debugging
+		debug = false;		//change if not debugging
 	}
 	
 	// Update is called once per frame
