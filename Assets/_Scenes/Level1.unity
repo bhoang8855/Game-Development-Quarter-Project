@@ -322,6 +322,26 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 58488013946203878, guid: 0fa0c9fe8d03a424dbeb2114973dd49d,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50125554207939370, guid: 0fa0c9fe8d03a424dbeb2114973dd49d,
+        type: 2}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50125554207939370, guid: 0fa0c9fe8d03a424dbeb2114973dd49d,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50125554207939370, guid: 0fa0c9fe8d03a424dbeb2114973dd49d,
+        type: 2}
+      propertyPath: m_Mass
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
   m_IsPrefabParent: 0

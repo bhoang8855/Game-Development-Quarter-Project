@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour {
 	private int spawnCount;
 	private int MAX_SPAWN_COUNT = 0;
     public GameObject enemy;
-    float randX;
+    float randAngle;
     Vector2 whereToSpawn;
     public float spawnRate = 2f;
     float nextSpawn = 0.0f;
@@ -29,9 +29,10 @@ public class EnemySpawner : MonoBehaviour {
         if (spawnCount < MAX_SPAWN_COUNT && Time.time > nextSpawn)
         {
             nextSpawn = Time.time + spawnRate;
-            // randX = Random.Range(-8.4f, 8.4f);
-            // Let's just spawn at SpawnPool's location for now
-            whereToSpawn = new Vector2(transform.position.x, transform.position.y);
+            randAngle = Random.Range(0.0f, 2.0f * Mathf.PI);
+            float positionX = 3.4f * Mathf.Cos(randAngle);
+            float positionY = 3.4f * Mathf.Sin(randAngle);
+            whereToSpawn = new Vector2(positionX, positionY);
 			spawnEnemy (enemy, whereToSpawn);
 			
         }
@@ -41,7 +42,7 @@ public class EnemySpawner : MonoBehaviour {
         
         GameObject clone = Instantiate(enemy, whereToSpawn, Quaternion.identity);
         clone.transform.SetParent(GameObject.FindWithTag("Enemy").transform);
-		phaseSystemRef.addEnemy (enemy);
+		phaseSystemRef.addEnemy (clone);
 		spawnCount++;
 		//Debug.Log ("Spawn count: " + spawnCount);
 	}
