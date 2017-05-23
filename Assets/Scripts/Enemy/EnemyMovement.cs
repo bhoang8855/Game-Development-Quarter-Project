@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour {
 	private PhaseSystem phaseSystemRef;
     private Animator anim;
     public Transform target;
+    public GameObject weapon;
     public float moveSpeed = 4f;
     private bool isMoving;
     private Vector2 lastMove;
@@ -16,7 +17,11 @@ public class EnemyMovement : MonoBehaviour {
     //Developer input parameters
     public float cooldown;
     public float attackRange;
+    public float projectileSpeed;
     public float playerDetectionRange;
+    //Hold projectiles
+    private List<GameObject> projectiles;
+    private Vector3 projectileTarget;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +30,7 @@ public class EnemyMovement : MonoBehaviour {
         //target = GameObject.FindWithTag("Player").GetComponent<Transform>();
         //target = GameObject.Find("Debugging Tower").GetComponent<Transform>();
         anim = GetComponent<Animator>();
+        projectiles = new List<GameObject>();
         isAttacking = false;
         isAttackingTower = false;
 	}
@@ -47,10 +53,11 @@ public class EnemyMovement : MonoBehaviour {
         // The enemy will face toward the player
         transform.LookAt(target);
         // rotate the enemy so it will not "turn face" in 2D game
-        transform.Rotate(new Vector3(0,-90,0),Space.Self);
+        transform.Rotate(new Vector3(0, -90, 0), Space.Self);
+
 
         // Simple attack cooldown system
-        if(isAttacking) {
+        if (isAttacking) {
             if (attackCooldown > 0) {
                 attackCooldown -= Time.deltaTime;
             }
@@ -68,7 +75,7 @@ public class EnemyMovement : MonoBehaviour {
             transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
             directionX = transform.position.x - lastX;
             directionY = transform.position.y - lastY;
-            lastMove = new Vector2(directionX, directionY);
+            lastMove = new Vector3(directionX, directionY);
             isMoving = true;
         }
         // Attack the player
@@ -76,9 +83,20 @@ public class EnemyMovement : MonoBehaviour {
             if (!isAttacking) {
                 //target.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(1);
                 //isAttackingTower = (target.name.Equals("Debugging Tower")) ? true : false;
+                GameObject projectile = Instantiate(weapon, transform.position, Quaternion.identity) as GameObject;
+                projectiles.Add(projectile);
+                projectileTarget = new Vector2(target.transform.position.x, target.transform.position.y);
                 isAttacking = true;
             }
         }
+
+        for (int i = 0; i < projectiles.Count; i++) {
+            GameObject goBullet = projectiles[i];
+            if (goBullet != null) {
+                goBullet.transform.Translate((projectileTarget - goBullet.transform.position).normalized * Time.deltaTime * projectileSpeed);
+            }
+        }
+
         transform.rotation = Quaternion.identity;
         // Set the animation moving direction
         anim.SetFloat("moveX", directionX);
