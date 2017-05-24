@@ -80,6 +80,7 @@ public class EnemyMovement : MonoBehaviour {
         }
         // Attack the player
         else {
+            lastMove = new Vector3(target.transform.position.x - lastX, target.transform.position.y - lastY);
             if (!isAttacking) {
                 //target.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(1);
                 //isAttackingTower = (target.name.Equals("Debugging Tower")) ? true : false;
