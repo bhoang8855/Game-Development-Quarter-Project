@@ -19,9 +19,10 @@ public class EnemyMovement : MonoBehaviour {
     public float attackRange;
     public float projectileSpeed;
     public float playerDetectionRange;
-    //Hold projectiles
+    //Hold projectiles and track its direction
     private List<GameObject> projectiles;
     private Vector3 projectileTarget;
+    private Vector3 projectileStartDirection;
 
 	// Use this for initialization
 	void Start () {
@@ -87,6 +88,7 @@ public class EnemyMovement : MonoBehaviour {
                 GameObject projectile = Instantiate(weapon, transform.position, Quaternion.identity) as GameObject;
                 projectiles.Add(projectile);
                 projectileTarget = new Vector2(target.transform.position.x, target.transform.position.y);
+                projectileStartDirection = (projectileTarget - projectile.transform.position).normalized;
                 isAttacking = true;
             }
         }
@@ -94,7 +96,7 @@ public class EnemyMovement : MonoBehaviour {
         for (int i = 0; i < projectiles.Count; i++) {
             GameObject goBullet = projectiles[i];
             if (goBullet != null) {
-                goBullet.transform.Translate((projectileTarget - goBullet.transform.position).normalized * Time.deltaTime * projectileSpeed, Space.World);
+                goBullet.transform.Translate(projectileStartDirection * Time.deltaTime * projectileSpeed, Space.World);
             }
         }
 
