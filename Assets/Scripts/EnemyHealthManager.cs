@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class EnemyHealthManager : MonoBehaviour {
 
+	public int damageTaken;
 	public int MaxHealth;
 	public int CurrentHealth;
 	public GameObject coin;
+	public GameObject dmg;
 
 
 	// Use this for initialization
@@ -31,5 +33,13 @@ public class EnemyHealthManager : MonoBehaviour {
 
 	public void SetMaxHealth() {
 		CurrentHealth = MaxHealth;
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.tag == "Player") {
+			// Show damage number
+			var clone = (GameObject) Instantiate (dmg, transform.position, Quaternion.Euler (Vector3.zero));
+			clone.GetComponent<FloatingNumbers>().dmg = damageTaken;
+		}
 	}
 }

@@ -109,8 +109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f56d76d1b2e54b2795ee02964e6e03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageTaken: 1
   MaxHealth: 3
   CurrentHealth: 0
+  coin: {fileID: 1541377057898978, guid: 5528d97b5307d454e96dc00321e1925d, type: 2}
+  dmg: {fileID: 1343129232359672, guid: ac564ff71f6934884ad624f0abe7710d, type: 2}
 --- !u!114 &114556152032035070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,7 +174,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1831338693
-  m_SortingLayer: 0
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300156, guid: 05dd0f8ab6d17b6468d051c27fe94dc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
