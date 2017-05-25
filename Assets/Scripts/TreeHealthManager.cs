@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealthManager : MonoBehaviour {
+public class TreeHealthManager : MonoBehaviour {
 
 	public int MaxHealth;
 	public int CurrentHealth;
-	public GameObject coin;
+	public GameObject log;
 
 
 	// Use this for initialization
@@ -17,15 +17,13 @@ public class EnemyHealthManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (CurrentHealth <= 0) {
-			// kill the enemy
 			Destroy (gameObject);
-			// enemy leaves a coin
-			Instantiate (coin, transform.position, transform.rotation);
+			Instantiate (log, transform.position, transform.rotation);
 		}
 
 	}
 
-	public void HurtEnemy(int damageToGive) {
+	public void HurtTree(int damageToGive) {
 		CurrentHealth -= damageToGive;
 	}
 
