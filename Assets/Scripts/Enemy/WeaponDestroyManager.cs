@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponDestroyManager : MonoBehaviour {
-
+    public float lifetime = 0.0f;
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	void Awake () {
+        Destroy(this.gameObject, lifetime);
 	}
 
     void OnTriggerEnter2D(Collider2D other) {
