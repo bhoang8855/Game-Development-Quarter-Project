@@ -94,7 +94,7 @@ public class EnemyMovement : MonoBehaviour {
         for (int i = 0; i < projectiles.Count; i++) {
             GameObject goBullet = projectiles[i];
             if (goBullet != null) {
-                goBullet.transform.Translate((projectileTarget - goBullet.transform.position).normalized * Time.deltaTime * projectileSpeed);
+                goBullet.transform.Translate((projectileTarget - goBullet.transform.position).normalized * Time.deltaTime * projectileSpeed, Space.World);
             }
         }
 
