@@ -4,11 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Phase System
-  - Countdown
   - Enemy Spawner
+  - Countdown
+  - Phase System
   - CountdownText
   - Enemy
+  - Wood
+  - Tree
+  - MinedRock
+  - Log
+  - Rock
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -45,4 +51,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 343276273
+    locked: 0
+  - name: Player
+    uniqueID: 2463628603
+    locked: 0
+  - name: UI
+    uniqueID: 1933185013
     locked: 0
