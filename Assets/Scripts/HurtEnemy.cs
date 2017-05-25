@@ -7,7 +7,7 @@ public class HurtEnemy : MonoBehaviour {
 	public int damageToGive;
 	public GameObject damageBurst;
 	public Transform hitPoint;
-	public GameObject dmg;
+//	public GameObject dmg;
 
 	// Use this for initialization
 	void Start () {
@@ -25,8 +25,8 @@ public class HurtEnemy : MonoBehaviour {
 			// Enable damage burst while hitting the enemy
 			Instantiate (damageBurst, transform.position, transform.rotation);
 			// Show damage numbers
-			var clone = (GameObject) Instantiate (dmg, transform.position, Quaternion.Euler (Vector3.zero));
-			clone.GetComponent<FloatingNumbers>().dmg = damageToGive;
+//			var clone = (GameObject) Instantiate (dmg, transform.position, Quaternion.Euler (Vector3.zero));
+//			clone.GetComponent<FloatingNumbers>().dmg = damageToGive;
 		}
 	}
 }
