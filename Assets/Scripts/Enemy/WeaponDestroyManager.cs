@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponDestroyManager : MonoBehaviour {
+
     public float lifetime = 0.0f;
 	// Use this for initialization
 	void Awake () {

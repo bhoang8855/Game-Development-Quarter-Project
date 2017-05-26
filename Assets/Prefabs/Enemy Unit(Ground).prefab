@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f56d76d1b2e54b2795ee02964e6e03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTaken: 1
-  MaxHealth: 3
+  damageTaken: 5
+  MaxHealth: 15
   CurrentHealth: 0
   coin: {fileID: 1541377057898978, guid: 5528d97b5307d454e96dc00321e1925d, type: 2}
   dmg: {fileID: 1343129232359672, guid: ac564ff71f6934884ad624f0abe7710d, type: 2}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138104f017fd84105932520a7c029b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToGive: 1
+  damageToGive: 5
 --- !u!114 &114735923203957750
 MonoBehaviour:
   m_ObjectHideFlags: 1

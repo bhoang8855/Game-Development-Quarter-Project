@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 61035518120864314}
   - component: {fileID: 114371244011716964}
   - component: {fileID: 114116186299040850}
+  - component: {fileID: 114135350750699662}
   m_Layer: 0
   m_Name: Bone
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1749545226322364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.303, y: -2.816, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,7 +74,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -87,7 +88,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.32}
+  m_Size: {x: 0.16, y: 0.32}
   m_EdgeRadius: 0
 --- !u!114 &114116186299040850
 MonoBehaviour:
@@ -101,6 +102,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 2
+--- !u!114 &114135350750699662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749545226322364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138104f017fd84105932520a7c029b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 2
 --- !u!114 &114371244011716964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,8 +155,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1831338693
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4b42a1b7f295fef4584a67d5a672ecbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

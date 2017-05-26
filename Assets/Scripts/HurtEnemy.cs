@@ -24,7 +24,7 @@ public class HurtEnemy : MonoBehaviour {
 			other.gameObject.GetComponent<EnemyHealthManager> ().HurtEnemy (damageToGive);
 			// Enable damage burst while hitting the enemy
 			Instantiate (damageBurst, transform.position, transform.rotation);
-			// Show damage numbers
+//			// Show damage numbers
 //			var clone = (GameObject) Instantiate (dmg, transform.position, Quaternion.Euler (Vector3.zero));
 //			clone.GetComponent<FloatingNumbers>().dmg = damageToGive;
 		}
