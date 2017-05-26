@@ -15,6 +15,7 @@ TagManager:
   - Log
   - Rock
   - Coin
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX

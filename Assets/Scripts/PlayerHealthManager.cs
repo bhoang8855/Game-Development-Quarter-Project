@@ -6,6 +6,9 @@ public class PlayerHealthManager : MonoBehaviour {
 
 	public int playerMaxHealth;
 	public int playerCurrentHealth;
+	public GameObject dmg;
+	public int meleeDamageTaken;
+	public int projectileDamageTaken;
 
 
 	// Use this for initialization
@@ -29,4 +32,18 @@ public class PlayerHealthManager : MonoBehaviour {
 		playerCurrentHealth = playerMaxHealth;
 	}
 
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.tag == "Enemy") {
+			// Show damage number
+			var clone = (GameObject) Instantiate (dmg, transform.position, Quaternion.Euler (Vector3.zero));
+			clone.GetComponent<FloatingNumbers>().dmg = meleeDamageTaken;
+		}
+
+		if (other.gameObject.tag == "EnemyProjectile") {
+			// Show damage number
+			var clone = (GameObject) Instantiate (dmg, transform.position, Quaternion.Euler (Vector3.zero));
+			clone.GetComponent<FloatingNumbers>().dmg = projectileDamageTaken;
+		}
+	}
 }
