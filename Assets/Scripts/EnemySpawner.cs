@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour {
 	void spawnEnemy(GameObject enemy, Vector2 location){
         
         GameObject clone = Instantiate(enemy, whereToSpawn, Quaternion.identity) as GameObject;
-        clone.transform.SetParent(GameObject.FindWithTag("Enemy").transform);
+        //clone.transform.SetParent(GameObject.FindWithTag("Enemy").transform);
 		phaseSystemRef.addEnemy (clone);
 		spawnCount++;
 		//Debug.Log ("Spawn count: " + spawnCount);

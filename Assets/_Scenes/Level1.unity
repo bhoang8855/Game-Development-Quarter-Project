@@ -1918,7 +1918,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 5528d97b5307d454e96dc00321e1925d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &246413474
@@ -5387,7 +5388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &739866552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5399,7 +5400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e521b6c960edf824f9f76a814df7d48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1230064620856366, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
+  enemy: {fileID: 1686191616066036, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
   spawnRate: 3
 --- !u!4 &739866553
 Transform:
@@ -9787,6 +9788,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4665814463187814, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686191616066036, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -15231,6 +15236,8 @@ GameObject:
   - component: {fileID: 2063311611}
   - component: {fileID: 2063311613}
   - component: {fileID: 2063311614}
+  - component: {fileID: 2063311610}
+  - component: {fileID: 2063311615}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -15371,6 +15378,86 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.17}
   serializedVersion: 2
   m_Radius: 0.18
+--- !u!82 &2063311610
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063311602}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b45f061f8940e0f4cb8341e37648459e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &2063311611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15441,6 +15528,18 @@ MonoBehaviour:
   damageBurst: {fileID: 1198200810346136, guid: 67ae69443617a4a8e92d435c696f37ba,
     type: 2}
   hitPoint: {fileID: 0}
+--- !u!114 &2063311615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063311602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b753ee3be7a607f409ea52ae879f2f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: f529269f15542124d83e911d4ffc682b, type: 3}
 --- !u!4 &2083318156 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4480684116452130, guid: f3454a05b08e54a9eb9287e22cbb346d,

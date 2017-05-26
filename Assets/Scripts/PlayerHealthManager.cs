@@ -9,11 +9,13 @@ public class PlayerHealthManager : MonoBehaviour {
 	public GameObject dmg;
 	public int meleeDamageTaken;
 	public int projectileDamageTaken;
+    private AudioSource playerHurt_sfx;
 
 
 	// Use this for initialization
 	void Start () {
 		playerCurrentHealth = playerMaxHealth;
+        playerHurt_sfx = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -38,12 +40,16 @@ public class PlayerHealthManager : MonoBehaviour {
 			// Show damage number
 			var clone = (GameObject) Instantiate (dmg, transform.position, Quaternion.Euler (Vector3.zero));
 			clone.GetComponent<FloatingNumbers>().dmg = meleeDamageTaken;
-		}
+            // Play sfx
+            playerHurt_sfx.Play();
+        }
 
 		if (other.gameObject.tag == "EnemyProjectile") {
 			// Show damage number
 			var clone = (GameObject) Instantiate (dmg, transform.position, Quaternion.Euler (Vector3.zero));
 			clone.GetComponent<FloatingNumbers>().dmg = projectileDamageTaken;
+            // Play sfx
+            playerHurt_sfx.Play();
 		}
 	}
 }
