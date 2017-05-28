@@ -1,0 +1,51 @@
+Bolton 5/16
+
+* Added following Objects to Level1 Scene:
+	PhaseSystem
+	Canvas
+	Countdown
+	CountdownText
+	EventSystem
+* Changed tags on following Objects:
+	SpawnPool	(Untagged	->	Enemy Spawner)
+* Added following Scripts:
+	PhaseSystem.cs
+	Countdown.cs
+
+PhaseSystem.cs
+	Maintains count of enemies that are alive, dead, and what phase the game is in. Has references to: Countdown to start the timer of gather phase, and EnemySpawner to restart it once gather phase is over. When all enemies that would be spawned are destroyed, the gather phase immediately begins. The battle phase starts after the timer for the gather phase ends.
+
+Countdown
+	Timer, also handles the text for the phases. Probably shouldn't. Will fix later.
+
+* Made changes to following Scripts:
+	PlayerController.cs
+	EnemyMovement.cs
+	EnemySpawner.cs
+	
+PlayerController.cs
+* Added a debug kill command. Tells enemies with script EnemyMovement to kill themselves.
+
+EnemyMovement.cs
+* Added a reference to the phase system
+	* Tells system when enemies are destroyed
+* Added removeAndDestroy(), tells system that it is destroyed, then destroys itself.
+
+EnemySpawner.cs
+* Added a reference to phase system
+	* Tells system when it spawns an enemy
+* Added variables
+	spawnCount
+	MAX_SPAWN_COUNT
+* Added methods
+	spawnEnemy: In addition to instantiating new enemies, tells phase system when enemies are spawned, and incs spawnCount.
+	getMaxSpawnCount
+	startSpawner(int maxSpawn): Sets MAX_SPAWN_COUNT to maxSpawn, then restarts itself.
+* Changed method
+	Start(): Added ref to phase system, sets MAX_SPAWN_COUNT
+
+=========
+
+Issues:
+
+* Sometimes, EnemyMovement script throws a NullReferenceException. Not sure why, and only happens occasionally.
