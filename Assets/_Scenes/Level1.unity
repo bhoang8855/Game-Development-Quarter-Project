@@ -1595,7 +1595,7 @@ Transform:
   - {fileID: 550296633}
   - {fileID: 1780572764}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &189307127 stripped
 Transform:
@@ -4743,7 +4743,7 @@ Transform:
   - {fileID: 131261821}
   - {fileID: 2134780119}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &636457938
 GameObject:
@@ -5628,7 +5628,7 @@ RectTransform:
   - {fileID: 872420922}
   - {fileID: 1734900476}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5771,7 +5771,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &777259034
 GameObject:
@@ -6242,7 +6242,7 @@ Transform:
   m_Children:
   - {fileID: 911515864}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &847520335 stripped
 Transform:
@@ -7668,7 +7668,7 @@ GameObject:
   - component: {fileID: 1134095231}
   m_Layer: 0
   m_Name: Castle
-  m_TagString: Untagged
+  m_TagString: Castle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7702,9 +7702,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 99
+  m_SortingLayerID: -1831338693
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9e56e7e3e2a744a4a9a7b00499154309, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7724,7 +7724,7 @@ Transform:
   m_LocalScale: {x: 0.55540985, y: 0.5148957, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1134095230
 MonoBehaviour:
@@ -10311,7 +10311,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1434122431 stripped
 Transform:
@@ -11974,8 +11974,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 278.6, y: -22.9}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 297.1, y: -20.1}
+  m_SizeDelta: {x: 197, y: 24.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1584386756
 MonoBehaviour:
@@ -12009,7 +12009,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Castle HP: \n"
+  m_Text: 'Castle HP: 15/50
+
+'
 --- !u!222 &1584386757
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14490,7 +14492,7 @@ Transform:
   - {fileID: 2031538040}
   - {fileID: 1627164514}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1878959241 stripped
 Transform:
@@ -14576,7 +14578,7 @@ Transform:
   - {fileID: 253842338}
   - {fileID: 383090884}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1908945135
 GameObject:
@@ -15573,7 +15575,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063311602}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b45f061f8940e0f4cb8341e37648459e, type: 3}
@@ -15928,7 +15930,7 @@ Transform:
   - {fileID: 2055758807}
   - {fileID: 1633311008}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2123448761 stripped
 Transform:

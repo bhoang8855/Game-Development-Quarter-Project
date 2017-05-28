@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114735923203957750}
   - component: {fileID: 114556152032035070}
   - component: {fileID: 114135564501899284}
+  - component: {fileID: 114184664286471950}
   m_Layer: 0
   m_Name: Enemy Unit(Ground)
   m_TagString: Enemy
@@ -114,6 +115,18 @@ MonoBehaviour:
   CurrentHealth: 0
   coin: {fileID: 1541377057898978, guid: 5528d97b5307d454e96dc00321e1925d, type: 2}
   dmg: {fileID: 1343129232359672, guid: ac564ff71f6934884ad624f0abe7710d, type: 2}
+--- !u!114 &114184664286471950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1686191616066036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dfda48d6c23440d7afd786b5bad2b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 1
 --- !u!114 &114556152032035070
 MonoBehaviour:
   m_ObjectHideFlags: 1
