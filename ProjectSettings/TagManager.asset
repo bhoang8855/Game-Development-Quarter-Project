@@ -18,6 +18,7 @@ TagManager:
   - EnemyProjectile
   - CastleHP
   - Castle
+  - CastleProjectile
   layers:
   - Default
   - TransparentFX

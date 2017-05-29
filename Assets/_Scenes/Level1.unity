@@ -727,7 +727,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &94672710
 GameObject:
@@ -1132,7 +1132,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &127831152
 MonoBehaviour:
@@ -1595,7 +1595,7 @@ Transform:
   - {fileID: 550296633}
   - {fileID: 1780572764}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &189307127 stripped
 Transform:
@@ -4743,7 +4743,7 @@ Transform:
   - {fileID: 131261821}
   - {fileID: 2134780119}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &636457938
 GameObject:
@@ -5413,7 +5413,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &746940544
 GameObject:
@@ -5556,7 +5556,7 @@ MonoBehaviour:
   HPText: {fileID: 1695830619}
   playerHealth: {fileID: 2063311607}
   CastleHP: {fileID: 1584386756}
-  castle: {fileID: 1134095230}
+  castle: {fileID: 1134095233}
 --- !u!114 &752545990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5628,7 +5628,7 @@ RectTransform:
   - {fileID: 872420922}
   - {fileID: 1734900476}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5771,7 +5771,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &777259034
 GameObject:
@@ -6242,7 +6242,7 @@ Transform:
   m_Children:
   - {fileID: 911515864}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &847520335 stripped
 Transform:
@@ -6887,6 +6887,52 @@ SpriteRenderer:
   m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+--- !u!1001 &1001897086
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4665814463187814, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665814463187814, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665814463187814, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665814463187814, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665814463187814, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665814463187814, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665814463187814, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665814463187814, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686191616066036, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
+      propertyPath: m_Name
+      value: Enemy Unit(Ground) (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0fa0c9fe8d03a424dbeb2114973dd49d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1011503488
 GameObject:
   m_ObjectHideFlags: 0
@@ -6954,7 +7000,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1024958504
 Prefab:
@@ -7666,6 +7712,9 @@ GameObject:
   - component: {fileID: 1134095228}
   - component: {fileID: 1134095230}
   - component: {fileID: 1134095231}
+  - component: {fileID: 1134095232}
+  - component: {fileID: 1134095233}
+  - component: {fileID: 1134095234}
   m_Layer: 0
   m_Name: Castle
   m_TagString: Castle
@@ -7720,11 +7769,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1134095227}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.55, y: -0.63, z: 0}
-  m_LocalScale: {x: 0.55540985, y: 0.5148957, z: 0.25}
+  m_LocalPosition: {x: 2.66, y: -0.59, z: 0}
+  m_LocalScale: {x: 0.53, y: 0.5148957, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1134095230
 MonoBehaviour:
@@ -7737,11 +7786,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e99bc5f6000fe74cb53b63e9a1190ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castleMaxHealth: 50
-  castleCurrentHealth: 0
+  target: {fileID: 0}
   dmg: {fileID: 1343129232359672, guid: ac564ff71f6934884ad624f0abe7710d, type: 2}
-  meleeDamageTaken: 1
-  projectileDamageTaken: 1
+  cooldown: 0.5
+  weapon: {fileID: 1344148587302820, guid: 5bc2904ace45c1147ad5f0321777ed8d, type: 2}
+  attackRange: 2
+  projectileSpeed: 3
+  enemyDetectionRange: 5
 --- !u!61 &1134095231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7754,7 +7805,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.0183258}
+  m_Offset: {x: 0.026443243, y: -0.88883746}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7765,8 +7816,60 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.4, y: 4.363349}
+  m_Size: {x: 6.206083, y: 4.1115036}
   m_EdgeRadius: 0
+--- !u!114 &1134095232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1134095227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd9ebbf133f54557a586ec32b4d8381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 5
+  damageBurst: {fileID: 1073098663692678, guid: cde011eb0abe24f17aeca0f69b58b81a,
+    type: 2}
+  dmg: {fileID: 1343129232359672, guid: ac564ff71f6934884ad624f0abe7710d, type: 2}
+--- !u!114 &1134095233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1134095227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c985b42c117e8bc46a969f33aad425b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageTaken: 2
+  castleMaxHealth: 500
+  castleCurrentHealth: 0
+  meleeDamageTaken: 0
+  projectileDamageTaken: 1
+  dmg: {fileID: 1343129232359672, guid: ac564ff71f6934884ad624f0abe7710d, type: 2}
+--- !u!50 &1134095234
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1134095227}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1134472478
 GameObject:
   m_ObjectHideFlags: 0
@@ -9588,7 +9691,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1345702337
 GameObject:
@@ -10311,7 +10414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1434122431 stripped
 Transform:
@@ -11974,8 +12077,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 297.1, y: -20.1}
-  m_SizeDelta: {x: 197, y: 24.4}
+  m_AnchoredPosition: {x: 456, y: -20.1}
+  m_SizeDelta: {x: 500, y: 24.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1584386756
 MonoBehaviour:
@@ -12856,7 +12959,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1685782186
 GameObject:
@@ -14492,7 +14595,7 @@ Transform:
   - {fileID: 2031538040}
   - {fileID: 1627164514}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1878959241 stripped
 Transform:
@@ -14578,7 +14681,7 @@ Transform:
   - {fileID: 253842338}
   - {fileID: 383090884}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1908945135
 GameObject:
@@ -15516,7 +15619,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2063311607
 MonoBehaviour:
@@ -15532,7 +15635,7 @@ MonoBehaviour:
   playerMaxHealth: 50
   playerCurrentHealth: 0
   dmg: {fileID: 1026699969348572, guid: 64f8d46af320f46ab845fa34c510d604, type: 2}
-  meleeDamageTaken: 1
+  meleeDamageTaken: 0
   projectileDamageTaken: 2
 --- !u!50 &2063311608
 Rigidbody2D:
@@ -15663,7 +15766,7 @@ MonoBehaviour:
   damageToGive: 5
   damageBurst: {fileID: 1073098663692678, guid: cde011eb0abe24f17aeca0f69b58b81a,
     type: 2}
-  hitPoint: {fileID: 0}
+  dmg: {fileID: 1343129232359672, guid: ac564ff71f6934884ad624f0abe7710d, type: 2}
 --- !u!61 &2063311612
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15930,7 +16033,7 @@ Transform:
   - {fileID: 2055758807}
   - {fileID: 1633311008}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2123448761 stripped
 Transform:
