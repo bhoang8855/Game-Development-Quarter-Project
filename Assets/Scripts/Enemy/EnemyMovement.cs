@@ -24,6 +24,9 @@ public class EnemyMovement : MonoBehaviour {
     private Vector3 projectileTarget;
     private Vector3 projectileStartDirection;
 
+    //fixing enemy walking towards castle
+    private float originAttackRange;
+
 	// Use this for initialization
 	void Start () {
 		GameObject phaseSystem = GameObject.FindWithTag ("Phase System");
@@ -34,6 +37,7 @@ public class EnemyMovement : MonoBehaviour {
         projectiles = new List<GameObject>();
         isAttacking = false;
         isAttackingTower = false;
+        originAttackRange = attackRange;
 	}
 	
 	// Update is called once per frame
@@ -42,10 +46,12 @@ public class EnemyMovement : MonoBehaviour {
             //&& !isAttackingTower
             ) {
             target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            attackRange = originAttackRange;
         }
         else {
 			target = GameObject.Find("Castle").GetComponent<Transform>();
             //target = GameObject.Find("Debugging Tower").GetComponent<Transform>();
+            attackRange = originAttackRange + 1f;
         }
         isMoving = false;
         // two variables to hold last frame position
@@ -114,4 +120,5 @@ public class EnemyMovement : MonoBehaviour {
 		phaseSystemRef.removeEnemy (this.gameObject);
 		Destroy (this.gameObject);
 	}
+        
 }
