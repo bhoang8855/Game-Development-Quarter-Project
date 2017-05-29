@@ -19,7 +19,7 @@ public class HurtEnemyByProj : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
-		if (other.gameObject.name == "Enemy") {
+		if (other.gameObject.name == "Enemy Unit(Ground)(Clone)") {
 			other.gameObject.GetComponent<EnemyHealthManager> ().HurtEnemy (damageToGive);
 			Destroy(this.gameObject);
 			// Enable damage burst while hitting the enemy

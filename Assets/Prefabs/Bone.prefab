@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114135350750699662}
   - component: {fileID: 82954988581967638}
   - component: {fileID: 114569718505030436}
+  - component: {fileID: 114899671290884116}
   m_Layer: 0
   m_Name: Bone
   m_TagString: EnemyProjectile
@@ -115,7 +116,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -207,6 +208,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToGive: 2
+--- !u!114 &114899671290884116
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749545226322364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ad1510b6b169f48a923b5798d7e410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 1
 --- !u!212 &212591614036874230
 SpriteRenderer:
   m_ObjectHideFlags: 1

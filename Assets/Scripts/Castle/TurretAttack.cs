@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Castle : MonoBehaviour {
+public class TurretAttack : MonoBehaviour {
 
 	private Animator anim;
 	//public Transform target;
 	public GameObject target;
 	public GameObject dmg;
 	private bool isAttacking;
-	private bool isAttackingTower;
+	//private bool isAttackingTower;
 	private float attackCooldown;
 	public float cooldown;
 	public GameObject weapon;
@@ -21,7 +21,8 @@ public class Castle : MonoBehaviour {
 	private Vector3 projectileTarget;
 	private Vector3 projectileStartDirection;
 
-	private GameObject[] ListOfEnemies;
+
+	public bool isActive;
 
 	// Use this for initialization
 	void Start () {
@@ -31,13 +32,13 @@ public class Castle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (isActive) {
+			attack();
+		}
+	}
 
-
-		//target = FindClosestEnemy();
+	void attack(){
 		target = GameObject.Find("Enemy Unit(Ground)(Clone)");
-		//target = GameObject.Find("Enemy Unit(Ground)(Clone)").GetComponent<Transform>();
-
-
 
 		float lastX = transform.position.x;
 		float lastY = transform.position.y;
@@ -56,11 +57,13 @@ public class Castle : MonoBehaviour {
 			attackCooldown = cooldown;
 		}
 
-//		if (Vector3.Distance(transform.position, target.position) > attackRange) {
-//			directionX = transform.position.x - lastX;
-//			directionY = transform.position.y - lastY;
-//			lastMove = new Vector3(directionX, directionY);
-//		}
+		if (Vector3.Distance(transform.position, target.transform.position) > attackRange) {
+					directionX = transform.position.x - lastX;
+					directionY = transform.position.y - lastY;
+					lastMove = new Vector3(directionX, directionY);
+				}
+
+
 		else {
 			lastMove = new Vector3(target.transform.position.x - lastX, target.transform.position.y - lastY);
 			if (!isAttacking) {
@@ -79,32 +82,5 @@ public class Castle : MonoBehaviour {
 				goBullet.transform.Translate(projectileStartDirection * Time.deltaTime * projectileSpeed, Space.World);
 			}
 		}
-
-		//transform.rotation = Quaternion.identity;
-		 //Set the animation moving direction
-		//anim.SetFloat("moveX", directionX);
-		//anim.SetFloat("moveY", directionY);
-		//anim.SetFloat("lastMoveX", lastMove.x);
-		//anim.SetFloat("lastMoveY", lastMove.y);
 	}
-
-
-	GameObject FindClosestEnemy() {
-		GameObject[] gos;
-		gos = GameObject.FindGameObjectsWithTag ("Enemy");
-		GameObject closest = null;
-		float distance = Mathf.Infinity;
-		Vector3 position = transform.position;
-		foreach (GameObject go in gos) {
-			Vector3 diff = go.transform.position - position;
-			float curDistance = diff.sqrMagnitude;
-			if (curDistance < distance) {
-				closest = go;
-				distance = curDistance;
-			}
-		}
-		return closest;
-	}
-
-	
 }
