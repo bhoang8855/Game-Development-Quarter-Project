@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Castle : MonoBehaviour {
+public class CastleHealthManager : MonoBehaviour {
+	public int damageTaken;
 	public int castleMaxHealth;
 	public int castleCurrentHealth;
-	public GameObject dmg;
 	public int meleeDamageTaken;
 	public int projectileDamageTaken;
+	public GameObject dmg;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +18,8 @@ public class Castle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (castleCurrentHealth <= 0) {
-			gameObject.SetActive (false);
+			// kill the castle
+			Destroy (gameObject);
 		}
 	}
 
@@ -35,8 +37,6 @@ public class Castle : MonoBehaviour {
 			// Show damage number
 			var clone = (GameObject) Instantiate (dmg, transform.position, Quaternion.Euler (Vector3.zero));
 			clone.GetComponent<FloatingNumbers>().dmg = meleeDamageTaken;
-
-
 		}
 
 		if (other.gameObject.tag == "EnemyProjectile") {
@@ -44,7 +44,6 @@ public class Castle : MonoBehaviour {
 			var clone = (GameObject) Instantiate (dmg, transform.position, Quaternion.Euler (Vector3.zero));
 			clone.GetComponent<FloatingNumbers>().dmg = projectileDamageTaken;
 
-	
 		}
 	}
 }

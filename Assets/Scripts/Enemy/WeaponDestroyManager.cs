@@ -15,4 +15,11 @@ public class WeaponDestroyManager : MonoBehaviour {
             Destroy(this.gameObject);
         }
     }
+
+//	void OnCollisionEnter(Collision collision) {
+//		if (collision.gameObject.name == "Castle") {
+//			Destroy(this.gameObject);
+//		}
+//	}
+
 }

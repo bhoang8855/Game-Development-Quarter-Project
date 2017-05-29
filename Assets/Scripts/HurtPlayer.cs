@@ -19,6 +19,7 @@ public class HurtPlayer : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.name == "Player") {
 			other.gameObject.GetComponent<PlayerHealthManager> ().HurtPlayer (damageToGive);
+			Destroy(this.gameObject);
 		}
 	}
 }

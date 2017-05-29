@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealthManager : MonoBehaviour {
 
 	public int damageTaken;
+	public int castleDamageTaken;
 	public int MaxHealth;
 	public int CurrentHealth;
 	public GameObject coin;
@@ -40,6 +41,11 @@ public class EnemyHealthManager : MonoBehaviour {
 			// Show damage number
 			var clone = (GameObject) Instantiate (dmg, transform.position, Quaternion.Euler (Vector3.zero));
 			clone.GetComponent<FloatingNumbers>().dmg = damageTaken;
+		}
+		if (other.gameObject.tag == "CastleProjectile") {
+			// Show damage number
+			var clone1 = (GameObject) Instantiate (dmg, transform.position, Quaternion.Euler (Vector3.zero));
+			clone1.GetComponent<FloatingNumbers>().dmg = castleDamageTaken;
 		}
 	}
 }

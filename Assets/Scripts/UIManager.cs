@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour {
 	public Text HPText;
 	public PlayerHealthManager playerHealth;
 	public Text CastleHP;
-	public Castle castle;
+	public CastleHealthManager castle;
 
 
 	// Use this for initialization
