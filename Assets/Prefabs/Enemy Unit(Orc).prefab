@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  weapon: {fileID: 1749545226322364, guid: 4e487fc77525d584d8da77eda5fbf0e7, type: 2}
+  weapon: {fileID: 1749545226322364, guid: 0f6cf135495212143b5c49b47abe179f, type: 2}
   moveSpeed: 1
   cooldown: 2
   attackRange: 1
@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageTaken: 5
+  castleDamageTaken: 0
   MaxHealth: 20
   CurrentHealth: 0
   coin: {fileID: 1541377057898978, guid: 5528d97b5307d454e96dc00321e1925d, type: 2}

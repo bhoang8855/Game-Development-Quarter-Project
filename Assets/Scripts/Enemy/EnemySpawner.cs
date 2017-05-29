@@ -30,8 +30,8 @@ public class EnemySpawner : MonoBehaviour {
         {
             nextSpawn = Time.time + spawnRate;
             randAngle = Random.Range(0.0f, 2.0f * Mathf.PI);
-            float positionX = 3.4f * Mathf.Cos(randAngle);
-            float positionY = 3.4f * Mathf.Sin(randAngle);
+            float positionX = 7.0f * Mathf.Cos(randAngle);
+            float positionY = 7.0f * Mathf.Sin(randAngle);
             whereToSpawn = new Vector2(positionX, positionY);
 			spawnEnemy (enemy, whereToSpawn);
 			
