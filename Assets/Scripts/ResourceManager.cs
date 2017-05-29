@@ -30,17 +30,17 @@ public class ResourceManager : MonoBehaviour {
 		/* Gold */
 		currentGold = 0;
 		PlayerPrefs.SetInt ("CurrentMoney", 0);
-		moneyText.text = "Gold: " + currentGold;
+		moneyText.text = "" + currentGold;
 
 		/* Wood */
 		currentWood = 0;
 		PlayerPrefs.SetInt ("CurrentWood", 0);
-		woodText.text = "Wood: " + currentWood;
+		woodText.text = "" + currentWood;
 
 		/* Rocks */
 		currentRock = 0;
 		PlayerPrefs.SetInt ("CurrentRock", 0);
-		rockText.text = "Rocks: " + currentRock;
+		rockText.text = "" + currentRock;
 
 	}
 
@@ -52,18 +52,18 @@ public class ResourceManager : MonoBehaviour {
 	public void AddMoney(int goldToAdd) {
 		currentGold += goldToAdd;
 		PlayerPrefs.SetInt ("CurrentMoney", currentGold);
-		moneyText.text = "Gold: " + currentGold;
+		moneyText.text = "" + currentGold;
 	}
 
 	public void AddWood(int woodToAdd) {
 		currentWood += woodToAdd;
 		PlayerPrefs.SetInt ("CurrentWood", currentWood);
-		woodText.text = "Wood: " + currentWood;
+		woodText.text = "" + currentWood;
 	}
 
 	public void AddRock(int rockToAdd) {
 		currentRock += rockToAdd;
 		PlayerPrefs.SetInt ("CurrentRock", 0);
-		rockText.text = "Rocks: " + currentRock;
+		rockText.text = "" + currentRock;
 	}
 }
