@@ -51,7 +51,7 @@ public class EnemyMovement : MonoBehaviour {
         else {
 			target = GameObject.Find("Castle").GetComponent<Transform>();
             //target = GameObject.Find("Debugging Tower").GetComponent<Transform>();
-            attackRange = originAttackRange + 1f;
+            attackRange = originAttackRange + 1.3f;
         }
         isMoving = false;
         // two variables to hold last frame position
