@@ -6086,11 +6086,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4480684116452130, guid: f3454a05b08e54a9eb9287e22cbb346d,
     type: 2}
   m_PrefabInternal: {fileID: 704179007}
---- !u!61 &802830849 stripped
-BoxCollider2D:
-  m_PrefabParentObject: {fileID: 61579886986380358, guid: 0fa0c9fe8d03a424dbeb2114973dd49d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1363470711}
 --- !u!4 &805142262 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4480684116452130, guid: f3454a05b08e54a9eb9287e22cbb346d,
@@ -8694,6 +8689,125 @@ SpriteRenderer:
   m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+--- !u!1 &1195707451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1195707452}
+  - component: {fileID: 1195707454}
+  - component: {fileID: 1195707453}
+  - component: {fileID: 1195707457}
+  - component: {fileID: 1195707456}
+  - component: {fileID: 1195707455}
+  m_Layer: 0
+  m_Name: SwordCollider
+  m_TagString: Sword
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1195707452
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1195707451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2063311606}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1195707453
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1195707451}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.14294589, y: -0.25860095}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3486383, y: 0.36773968}
+  m_EdgeRadius: 0
+--- !u!114 &1195707454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1195707451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c17106f0b6a57649b5288fd99214aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 5
+  damageBurst: {fileID: 1073098663692678, guid: cde011eb0abe24f17aeca0f69b58b81a,
+    type: 2}
+  hitPoint: {fileID: 0}
+  dmg: {fileID: 0}
+--- !u!114 &1195707455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1195707451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a42d388f0d8d4f26b4f407c017ad6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 1
+  damageBurst: {fileID: 1198200810346136, guid: 67ae69443617a4a8e92d435c696f37ba,
+    type: 2}
+  hitPoint: {fileID: 0}
+--- !u!114 &1195707456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1195707451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571fdc59bd3e84bb599a1280d0d4e9ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 1
+  damageBurst: {fileID: 1198200810346136, guid: 67ae69443617a4a8e92d435c696f37ba,
+    type: 2}
+  hitPoint: {fileID: 0}
+--- !u!114 &1195707457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1195707451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd9ebbf133f54557a586ec32b4d8381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 5
+  damageBurst: {fileID: 1073098663692678, guid: cde011eb0abe24f17aeca0f69b58b81a,
+    type: 2}
+  dmg: {fileID: 0}
 --- !u!1 &1204767728
 GameObject:
   m_ObjectHideFlags: 0
@@ -15706,8 +15820,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  attackTime: 2
-  SwordCollider: {fileID: 802830849}
+  attackTime: 0.5
+  SwordCollider: {fileID: 1195707453}
 --- !u!95 &2063311604
 Animator:
   serializedVersion: 3
@@ -15757,7 +15871,7 @@ SpriteRenderer:
   m_SortingLayerID: -1831338693
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300156, guid: 7fa9bfdeb5cbf8848b2003205af92206, type: 3}
+  m_Sprite: {fileID: 21300226, guid: 7fa9bfdeb5cbf8848b2003205af92206, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15774,7 +15888,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.72, y: -3.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1195707452}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15784,7 +15899,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063311602}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cea61e04cf19740d3b29f110cabdccbe, type: 3}
   m_Name: 
@@ -15915,7 +16030,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063311602}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fd9ebbf133f54557a586ec32b4d8381, type: 3}
   m_Name: 
@@ -15955,7 +16070,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063311602}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a42d388f0d8d4f26b4f407c017ad6ba, type: 3}
   m_Name: 

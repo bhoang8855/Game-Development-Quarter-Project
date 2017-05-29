@@ -19,6 +19,7 @@ TagManager:
   - CastleHP
   - Castle
   - CastleProjectile
+  - Sword
   layers:
   - Default
   - TransparentFX
