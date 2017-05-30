@@ -15435,6 +15435,7 @@ MonoBehaviour:
   damageBurst: {fileID: 1198200810346136, guid: 67ae69443617a4a8e92d435c696f37ba,
     type: 2}
   hitPoint: {fileID: 0}
+  sound: {fileID: 8300000, guid: c886b8294bc60bf4299e5be0432b1050, type: 3}
 --- !u!114 &1988585148
 MonoBehaviour:
   m_ObjectHideFlags: 0
