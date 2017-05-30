@@ -11,8 +11,15 @@ public class WeaponDestroyManager : MonoBehaviour {
 	}
 
     void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag == "Player" || other.gameObject.tag == "Castle") {
-            Destroy(this.gameObject);
+        if (gameObject.tag == "CastleProjectile") {
+            if (other.gameObject.tag == "Enemy") {
+                Destroy(this.gameObject);
+            }
+        }
+        else {
+            if (other.gameObject.tag == "Player" || other.gameObject.tag == "Castle") {
+                Destroy(this.gameObject);
+            }
         }
     }
 
