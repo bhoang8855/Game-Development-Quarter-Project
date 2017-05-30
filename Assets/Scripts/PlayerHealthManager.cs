@@ -11,6 +11,11 @@ public class PlayerHealthManager : MonoBehaviour {
 	public int projectileDamageTaken;
     private AudioSource playerHurt_sfx;
 
+	public int healthReg;
+	bool isRegenHealth;
+
+	public int healthToUpgrade = 10;
+
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +29,13 @@ public class PlayerHealthManager : MonoBehaviour {
 			gameObject.SetActive (false);
 		}
 
+//		// Health regen once there are no more enemies
+//		if (GameObject.Find("Enemy Unit(Ground)(Clone)") == null) {
+//			playerCurrentHealth += healthReg;
+//		}
+
 	}
+		
 
 	public void HurtPlayer(int damageToGive) {
 		playerCurrentHealth -= damageToGive;
@@ -32,6 +43,11 @@ public class PlayerHealthManager : MonoBehaviour {
 
 	public void SetMaxHealth() {
 		playerCurrentHealth = playerMaxHealth;
+	}
+
+	public void UpgradeMaxHealth(int healthToUpgrade) {
+		playerMaxHealth += healthToUpgrade;
+
 	}
 
 

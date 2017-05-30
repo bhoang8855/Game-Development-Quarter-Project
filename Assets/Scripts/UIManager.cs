@@ -19,9 +19,9 @@ public class UIManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		healthBar.maxValue = playerHealth.playerMaxHealth;
-		healthBar.value = playerHealth.playerCurrentHealth;
-		HPText.text = "HP: " + playerHealth.playerCurrentHealth + "/" + playerHealth.playerMaxHealth;
-		CastleHP.text = "Castle HP: " + castle.castleCurrentHealth + "/" + castle.castleMaxHealth;
+		//healthBar.maxValue = playerHealth.playerMaxHealth;
+		//healthBar.value = playerHealth.playerCurrentHealth;
+		HPText.text = "" + playerHealth.playerCurrentHealth + "/" + playerHealth.playerMaxHealth;
+		CastleHP.text = "" + castle.castleCurrentHealth + "/" + castle.castleMaxHealth;
 	}
 }
