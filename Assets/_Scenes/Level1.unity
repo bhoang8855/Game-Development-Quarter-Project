@@ -2961,6 +2961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 423937512}
   - component: {fileID: 423937513}
+  - component: {fileID: 423937514}
   m_Layer: 0
   m_Name: TurretUpperRight
   m_TagString: Untagged
@@ -3000,6 +3001,21 @@ MonoBehaviour:
   projectileSpeed: 2
   enemyDetectionRange: 4
   isActive: 1
+--- !u!58 &423937514
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 423937511}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.18, y: 0.44}
+  serializedVersion: 2
+  m_Radius: 3.1202102
 --- !u!1 &433639559
 GameObject:
   m_ObjectHideFlags: 0
@@ -6972,6 +6988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 988388417}
   - component: {fileID: 988388418}
+  - component: {fileID: 988388419}
   m_Layer: 0
   m_Name: TurretLowerLeft
   m_TagString: Untagged
@@ -7011,6 +7028,21 @@ MonoBehaviour:
   projectileSpeed: 2
   enemyDetectionRange: 4
   isActive: 1
+--- !u!58 &988388419
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 988388416}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3.0199885
 --- !u!1 &990523809
 GameObject:
   m_ObjectHideFlags: 0
@@ -8933,6 +8965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1216053929}
   - component: {fileID: 1216053930}
+  - component: {fileID: 1216053931}
   m_Layer: 0
   m_Name: TurretLowerRight
   m_TagString: Untagged
@@ -8972,6 +9005,21 @@ MonoBehaviour:
   projectileSpeed: 2
   enemyDetectionRange: 4
   isActive: 1
+--- !u!58 &1216053931
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1216053928}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.25, y: -0.5}
+  serializedVersion: 2
+  m_Radius: 3.091578
 --- !u!1 &1225767061
 GameObject:
   m_ObjectHideFlags: 0
@@ -11068,6 +11116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1487726729}
   - component: {fileID: 1487726730}
+  - component: {fileID: 1487726731}
   m_Layer: 0
   m_Name: TurretUpperLeft
   m_TagString: Untagged
@@ -11107,6 +11156,21 @@ MonoBehaviour:
   projectileSpeed: 2
   enemyDetectionRange: 4
   isActive: 1
+--- !u!58 &1487726731
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1487726728}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.83, y: 0.5}
+  serializedVersion: 2
+  m_Radius: 3.1774864
 --- !u!1001 &1491670521
 Prefab:
   m_ObjectHideFlags: 0

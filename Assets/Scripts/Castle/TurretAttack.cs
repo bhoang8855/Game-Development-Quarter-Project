@@ -29,57 +29,43 @@ public class TurretAttack : MonoBehaviour {
 		projectiles = new List<GameObject>();
 		isAttacking = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (isActive) {
-			attack();
-		}
-	}
 
-	void attack(){
-		target = GameObject.Find("Enemy Unit(Ground)(Clone)");
+	void OnTriggerStay2D(Collider2D other) {
+		if (other.gameObject.tag == "Enemy") {
+			target = other.gameObject;
+			float lastX = transform.position.x;
+			float lastY = transform.position.y;
+			float directionX = 0; float directionY = 0;
 
-		float lastX = transform.position.x;
-		float lastY = transform.position.y;
-		float directionX = 0; float directionY = 0;
-
-		if (isAttacking) {
-			if (attackCooldown > 0) {
-				attackCooldown -= Time.deltaTime;
-			}
-			if (attackCooldown < 0) {
-				attackCooldown = 0.0f;
-			}
-		}
-		if(attackCooldown == 0) {
-			isAttacking = false;
-			attackCooldown = cooldown;
-		}
-
-		if (Vector3.Distance(transform.position, target.transform.position) > attackRange) {
-					directionX = transform.position.x - lastX;
-					directionY = transform.position.y - lastY;
-					lastMove = new Vector3(directionX, directionY);
+			if (isAttacking) {
+				if (attackCooldown > 0) {
+					attackCooldown -= Time.deltaTime;
 				}
-
-
-		else {
-			lastMove = new Vector3(target.transform.position.x - lastX, target.transform.position.y - lastY);
-			if (!isAttacking) {
-				//target.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(1);
-				//isAttackingTower = (target.name.Equals("Debugging Tower")) ? true : false;
-				GameObject projectile = Instantiate(weapon, transform.position, Quaternion.identity) as GameObject;
-				projectiles.Add(projectile);
-				projectileTarget = new Vector2(target.transform.position.x, target.transform.position.y);
-				projectileStartDirection = (projectileTarget - projectile.transform.position).normalized;
-				isAttacking = true;
+				if (attackCooldown < 0) {
+					attackCooldown = 0.0f;
+				}
 			}
-		}
-		for (int i = 0; i < projectiles.Count; i++) {
-			GameObject goBullet = projectiles[i];
-			if (goBullet != null) {
-				goBullet.transform.Translate(projectileStartDirection * Time.deltaTime * projectileSpeed, Space.World);
+			if(attackCooldown == 0) {
+				isAttacking = false;
+				attackCooldown = cooldown;
+			}
+			else {
+				lastMove = new Vector3(target.transform.position.x - lastX, target.transform.position.y - lastY);
+				if (!isAttacking) {
+					//target.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(1);
+					//isAttackingTower = (target.name.Equals("Debugging Tower")) ? true : false;
+					GameObject projectile = Instantiate(weapon, transform.position, Quaternion.identity) as GameObject;
+					projectiles.Add(projectile);
+					projectileTarget = new Vector2(target.transform.position.x, target.transform.position.y);
+					projectileStartDirection = (projectileTarget - projectile.transform.position).normalized;
+					isAttacking = true;
+				}
+			}
+			for (int i = 0; i < projectiles.Count; i++) {
+				GameObject goBullet = projectiles[i];
+				if (goBullet != null) {
+					goBullet.transform.Translate(projectileStartDirection * Time.deltaTime * projectileSpeed, Space.World);
+				}
 			}
 		}
 	}
