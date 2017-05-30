@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class PlayerHealthManager : MonoBehaviour {
     private AudioSource playerHurt_sfx;
     public AudioClip sound;
 
+    public GameObject GameOverText;
 
     // Use this for initialization
     void Start () {
@@ -24,9 +26,16 @@ public class PlayerHealthManager : MonoBehaviour {
 		if (playerCurrentHealth <= 0) {
 			gameObject.SetActive (false);
             AudioSource.PlayClipAtPoint(sound, transform.position);
+            GameOverText.SetActive(true);
+            Invoke("Restart", 3f);
         }
 
 	}
+
+    void Restart()
+    {
+        SceneManager.LoadScene("Home");
+    }
 
 	public void HurtPlayer(int damageToGive) {
 		playerCurrentHealth -= damageToGive;
