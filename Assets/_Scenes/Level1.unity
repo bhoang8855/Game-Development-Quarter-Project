@@ -5430,6 +5430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 739866553}
   - component: {fileID: 739866552}
+  - component: {fileID: 739866554}
   m_Layer: 0
   m_Name: SpawnPool
   m_TagString: Enemy Spawner
@@ -5463,6 +5464,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &739866554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 739866551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4103c23507fee414bb0d12b1b5647c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 1132422828104624, guid: f3454a05b08e54a9eb9287e22cbb346d, type: 2}
+  rock: {fileID: 1891854774033900, guid: daa161dd96bf84b3c861ac13cb356db8, type: 2}
+  spawnRate: 0.5
 --- !u!1 &746940544
 GameObject:
   m_ObjectHideFlags: 0
@@ -6424,7 +6439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   status: 0
   timeLeft: 0
-  defTimeLimit: 10
+  defTimeLimit: 30
   text: {fileID: 0}
 --- !u!224 &872420922
 RectTransform:
@@ -10624,6 +10639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dabc03ec72a56aa4ea838feb7caab6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battlePhase: 0
+  gatherPhase: 0
 --- !u!4 &1404220746
 Transform:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (spawnCount < MAX_SPAWN_COUNT && Time.time > nextSpawn)
+		if (phaseSystemRef.battlePhase && spawnCount < MAX_SPAWN_COUNT && Time.time > nextSpawn)
         {
             nextSpawn = Time.time + spawnRate;
             randAngle = Random.Range(0.0f, 2.0f * Mathf.PI);
@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void spawnEnemy(GameObject enemy, Vector2 location){
         
-        GameObject clone = Instantiate(enemy, whereToSpawn, Quaternion.identity) as GameObject;
+        GameObject clone = Instantiate(enemy, location, Quaternion.identity) as GameObject;
         //clone.transform.SetParent(GameObject.FindWithTag("Enemy").transform);
 		phaseSystemRef.addEnemy (clone);
 		spawnCount++;

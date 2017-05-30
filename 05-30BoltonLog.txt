@@ -1,0 +1,12 @@
+* Added a ResourceSpawner
+	* Can adjust MAX_SPAWN_COUNT
+	* Can adjust spawnRate in inspector
+	* Can adjust treeOrRock rate
+
+* IMPORTANT: PhaseSystem will only work if enemies tell PhaseSystem that they died by calling removeEnemy(this) on a reference to the PhaseSystem
+
+* Enemies are being randomly spawned in a circle formation. If you want enemies to spawn randomly within the play area, look at ResourceSpawner's update method.
+
+* Countdown Timer now is 30s, change in inspector
+
+* PhaseSystem knows the number of waves, and tells EnemySpawner that the maximum enemy units it can spawn is 5 + 2 * (NUMWAVES - 1) . So Wave 1 = 5 enemies, 2 = 7 enemies, etc.
