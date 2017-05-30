@@ -7,7 +7,7 @@ public class Countdown : MonoBehaviour
 	private PhaseSystem phaseSystemRef;
 	public bool status;
 	public float timeLeft;
-	public float defTimeLimit = 10f;
+	public float defTimeLimit = 30.0f;
 	public Text text;
 
 	// Use this for initialization
@@ -20,7 +20,7 @@ public class Countdown : MonoBehaviour
 		status = false;
 		text = (Text) GameObject.FindWithTag("CountdownText").GetComponent(typeof(Text));
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -32,6 +32,11 @@ public class Countdown : MonoBehaviour
 		} else if (status == false) {
 			text.text = "Battle Phase";
 		}
+	}
+
+	public void startTimer(float time){
+		defTimeLimit = time;
+		status = true;
 	}
 
 	public void startTimer(){

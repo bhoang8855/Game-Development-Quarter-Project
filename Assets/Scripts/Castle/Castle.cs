@@ -35,8 +35,13 @@ public class Castle : MonoBehaviour {
 
 		//target = FindClosestEnemy();
 		target = GameObject.Find("Enemy Unit(Ground)(Clone)");
+		float targetX = 0;
+		float targetY = 0;
 		//target = GameObject.Find("Enemy Unit(Ground)(Clone)").GetComponent<Transform>();
-
+		if (target != null) {
+			targetX = target.transform.position.x;
+			targetY = target.transform.position.y;
+		}
 
 
 		float lastX = transform.position.x;
@@ -62,13 +67,15 @@ public class Castle : MonoBehaviour {
 //			lastMove = new Vector3(directionX, directionY);
 //		}
 		else {
-			lastMove = new Vector3(target.transform.position.x - lastX, target.transform.position.y - lastY);
-			if (!isAttacking) {
+			if (target != null) {
+				lastMove = new Vector3 (target.transform.position.x - lastX, target.transform.position.y - lastY);
+			}
+			if (!isAttacking && target != null) {
 				//target.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(1);
 				//isAttackingTower = (target.name.Equals("Debugging Tower")) ? true : false;
 				GameObject projectile = Instantiate(weapon, transform.position, Quaternion.identity) as GameObject;
 				projectiles.Add(projectile);
-				projectileTarget = new Vector2(target.transform.position.x, target.transform.position.y);
+				projectileTarget = new Vector2(targetX, targetY);
 				projectileStartDirection = (projectileTarget - projectile.transform.position).normalized;
 				isAttacking = true;
 			}

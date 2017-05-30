@@ -10,10 +10,14 @@ public class EnemyHealthManager : MonoBehaviour {
 	public int CurrentHealth;
 	public GameObject coin;
 	public GameObject dmg;
+	private PhaseSystem phaseSystemRef;
 
 
 	// Use this for initialization
 	void Start () {
+		GameObject phaseSystem = GameObject.FindWithTag ("Phase System");
+		this.phaseSystemRef = (PhaseSystem) phaseSystem.GetComponent(typeof(PhaseSystem));
+
 		CurrentHealth = MaxHealth;
 	}
 
@@ -21,6 +25,7 @@ public class EnemyHealthManager : MonoBehaviour {
 	void Update () {
 		if (CurrentHealth <= 0) {
 			// kill the enemy
+			phaseSystemRef.removeEnemy(this.gameObject);
 			Destroy (gameObject);
 			// enemy leaves a coin
 			Instantiate (coin, transform.position, transform.rotation);

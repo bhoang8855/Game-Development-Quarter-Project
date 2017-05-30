@@ -1,0 +1,20 @@
+* Added a ResourceSpawner
+	* Can adjust MAX_SPAWN_COUNT
+	* Can adjust spawnRate in inspector
+	* Can adjust treeOrRock rate
+	* Can adjust the random ranges of where the resources spawn, ctrl+f "whereToSpawn"
+	* SpawnPool currently has two scripts, Enemy Spawner AND Resource Spawner
+	* ResourceSpawner will only spawn resources during Gather Phase
+
+* Enemy Spawner will now only spawn enemies during Battle Phase
+
+* Countdown Timer now is 30s, change in inspector
+
+* PhaseSystem knows the number of waves, and tells EnemySpawner that the maximum enemy units it can spawn is 5 + 2 * (NUMWAVES - 1) . So Wave 1 = 5 enemies, 2 = 7 enemies, etc.
+
+* Enemies report their death to PhaseSystem so we can know when to transition between phases
+
+* Edited rock prefab to only have one health manager, and to have a collider box. Previously, only preset rocks had collider boxes.
+
+* Edited tree prefab to spawn logs on death. Previously, only preset trees had logs spawn on death.
+

@@ -2040,25 +2040,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3454a05b08e54a9eb9287e22cbb346d, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &359291304 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1891854774033900, guid: daa161dd96bf84b3c861ac13cb356db8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1024958504}
---- !u!114 &359291305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 359291304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77fafe4eed32844f9bfbb67b34c82dc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 3
-  CurrentHealth: 0
-  mined_rock: {fileID: 1694506401834318, guid: efa1af8fc55c44c82bc3799b7a3d02dd, type: 2}
 --- !u!4 &360513226 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4480684116452130, guid: f3454a05b08e54a9eb9287e22cbb346d,
@@ -3921,6 +3902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 739866553}
   - component: {fileID: 739866552}
+  - component: {fileID: 739866554}
   m_Layer: 0
   m_Name: SpawnPool
   m_TagString: Enemy Spawner
@@ -3956,6 +3938,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &739866554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 739866551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d9bf46c3e97ad409ebca6000cebaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 1132422828104624, guid: f3454a05b08e54a9eb9287e22cbb346d, type: 2}
+  rock: {fileID: 1891854774033900, guid: daa161dd96bf84b3c861ac13cb356db8, type: 2}
+  spawnRate: 2
 --- !u!1 &749271845 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1891854774033900, guid: daa161dd96bf84b3c861ac13cb356db8,
@@ -4661,7 +4657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   status: 0
   timeLeft: 0
-  defTimeLimit: 10
+  defTimeLimit: 30
   text: {fileID: 0}
 --- !u!224 &872420922
 RectTransform:
@@ -4871,25 +4867,6 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 982002299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77fafe4eed32844f9bfbb67b34c82dc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 3
-  CurrentHealth: 0
-  mined_rock: {fileID: 1694506401834318, guid: efa1af8fc55c44c82bc3799b7a3d02dd, type: 2}
---- !u!1 &985520145 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1891854774033900, guid: daa161dd96bf84b3c861ac13cb356db8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1493608672}
---- !u!114 &985520146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 985520145}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77fafe4eed32844f9bfbb67b34c82dc0, type: 3}
@@ -5230,25 +5207,6 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1072786107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77fafe4eed32844f9bfbb67b34c82dc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 3
-  CurrentHealth: 0
-  mined_rock: {fileID: 1694506401834318, guid: efa1af8fc55c44c82bc3799b7a3d02dd, type: 2}
---- !u!1 &1094940228 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1891854774033900, guid: daa161dd96bf84b3c861ac13cb356db8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1371168450}
---- !u!114 &1094940229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1094940228}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77fafe4eed32844f9bfbb67b34c82dc0, type: 3}
@@ -7299,6 +7257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dabc03ec72a56aa4ea838feb7caab6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battlePhase: 0
+  gatherPhase: 0
 --- !u!4 &1404220746
 Transform:
   m_ObjectHideFlags: 0

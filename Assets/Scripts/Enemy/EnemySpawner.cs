@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (spawnCount < MAX_SPAWN_COUNT && Time.time > nextSpawn)
+		if (phaseSystemRef.battlePhase && spawnCount < MAX_SPAWN_COUNT && Time.time > nextSpawn)
         {
             nextSpawn = Time.time + spawnRate;
             randAngle = Random.Range(0.0f, 2.0f * Mathf.PI);

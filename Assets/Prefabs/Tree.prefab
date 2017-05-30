@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 3
   CurrentHealth: 0
-  log: {fileID: 0}
+  log: {fileID: 1545130815176250, guid: 9d44b69bef0de4f20bfbcbb22e6c407c, type: 2}
 --- !u!212 &212823938379430538
 SpriteRenderer:
   m_ObjectHideFlags: 1
