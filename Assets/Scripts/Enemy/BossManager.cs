@@ -21,6 +21,7 @@ public class BossManager : MonoBehaviour {
     public float playerDetectionRange;
     //Hold projectiles and track its direction
     private List<GameObject> projectiles;
+    private List<Vector3> associateCoordinate;
     private Vector3 projectileTarget;
     private Vector3 projectileStartDirection;
 
@@ -35,6 +36,7 @@ public class BossManager : MonoBehaviour {
         //target = GameObject.Find("Debugging Tower").GetComponent<Transform>();
         anim = GetComponent<Animator>();
         projectiles = new List<GameObject>();
+        associateCoordinate = new List<Vector3>();
         isAttacking = false;
         isAttackingTower = false;
         originAttackRange = attackRange;
@@ -93,10 +95,11 @@ public class BossManager : MonoBehaviour {
                 //target.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(1);
                 //isAttackingTower = (target.name.Equals("Debugging Tower")) ? true : false;
                 GameObject projectile = Instantiate(weapon, transform.position, Quaternion.identity) as GameObject;
-                projectile.transform.localScale = new Vector3(5, 5);
+                //projectile.transform.localScale = new Vector3(5, 5);
                 projectiles.Add(projectile);
                 projectileTarget = new Vector2(target.transform.position.x, target.transform.position.y);
                 projectileStartDirection = (projectileTarget - projectile.transform.position).normalized;
+                associateCoordinate.Add(projectileStartDirection);
                 isAttacking = true;
             }
         }
@@ -104,7 +107,7 @@ public class BossManager : MonoBehaviour {
         for (int i = 0; i < projectiles.Count; i++) {
             GameObject goBullet = projectiles[i];
             if (goBullet != null) {
-                goBullet.transform.Translate(projectileStartDirection * Time.deltaTime * projectileSpeed, Space.World);
+                goBullet.transform.Translate(associateCoordinate[i] * Time.deltaTime * projectileSpeed, Space.World);
             }
         }
 

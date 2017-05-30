@@ -16,7 +16,7 @@ public class HurtCastle : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter2D(Collision2D other) {
+	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.name == "Castle") {
 			other.gameObject.GetComponent<CastleHealthManager> ().HurtCastle (damageToGive);
             if (gameObject.tag != "Enemy")
