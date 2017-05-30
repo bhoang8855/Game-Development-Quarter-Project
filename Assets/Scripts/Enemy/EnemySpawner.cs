@@ -9,6 +9,8 @@ public class EnemySpawner : MonoBehaviour {
 	private int spawnCount;
 	private int MAX_SPAWN_COUNT = 0;
     public GameObject enemy;
+	public GameObject orc;
+	public GameObject boss;
     float randAngle;
     Vector2 whereToSpawn;
     public float spawnRate = 2f;
@@ -17,7 +19,7 @@ public class EnemySpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if(MAX_SPAWN_COUNT == 0)
-			MAX_SPAWN_COUNT = 5; //debugging
+			MAX_SPAWN_COUNT = 1000; //debugging
 		//Debug.Log("Started, Max spawn Count is: "+MAX_SPAWN_COUNT);
 		GameObject phaseSystem = GameObject.FindWithTag ("Phase System");
 		this.phaseSystemRef = (PhaseSystem) phaseSystem.GetComponent(typeof(PhaseSystem));
@@ -39,8 +41,13 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	void spawnEnemy(GameObject enemy, Vector2 location){
-        
-        GameObject clone = Instantiate(enemy, whereToSpawn, Quaternion.identity) as GameObject;
+		GameObject clone;
+		if (Random.value < 0.10)
+        clone = Instantiate(boss, whereToSpawn, Quaternion.identity) as GameObject;
+		else if (Random.value < 0.25)
+			clone = Instantiate(orc, whereToSpawn, Quaternion.identity) as GameObject;
+		else
+			clone = Instantiate(enemy, whereToSpawn, Quaternion.identity) as GameObject;
         //clone.transform.SetParent(GameObject.FindWithTag("Enemy").transform);
 		phaseSystemRef.addEnemy (clone);
 		spawnCount++;

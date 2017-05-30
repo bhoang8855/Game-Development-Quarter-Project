@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CastleHealthManager : MonoBehaviour {
 	public int damageTaken;
@@ -9,6 +10,7 @@ public class CastleHealthManager : MonoBehaviour {
 	public int meleeDamageTaken;
 	public int projectileDamageTaken;
 	public GameObject dmg;
+	public GameObject GameOverText;
 
 	// Use this for initialization
 	void Start () {
@@ -19,12 +21,18 @@ public class CastleHealthManager : MonoBehaviour {
 	void Update () {
 		if (castleCurrentHealth <= 0) {
 			// kill the castle
-			Destroy (gameObject);
+			GameOverText.SetActive(true);
+			Invoke("Restart", 3f);
 		}
 	}
 
 	public void HurtCastle(int damageToGive) {
 		castleCurrentHealth -= damageToGive;
+	}
+
+	void Restart()
+	{
+		SceneManager.LoadScene("Home");
 	}
 
 	public void SetMaxHealth() {
