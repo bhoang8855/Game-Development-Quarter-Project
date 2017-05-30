@@ -44,9 +44,3 @@
 *.eps binary
 # Those unity files will skip git auto merge
 # instead they will use yamlmerge
-*.unity binary
-*.prefab binary
-*.asset binary
-*.meta binary
-*.anim binary
-*.controller binary

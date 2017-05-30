@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour {
     public float attackTime;
     private float attackTimeCounter;
 
-    [SerializeField]
-    private BoxCollider2D SwordCollider;
 
     // Use this for initialization
     void Start () {
@@ -58,7 +56,6 @@ public class PlayerController : MonoBehaviour {
                 attacking = true;
                 myRigidbody.velocity = Vector2.zero;
                 anim.SetBool("Attack", true);
-                SwordCollider.enabled = true;
             }
         }
 
@@ -70,7 +67,6 @@ public class PlayerController : MonoBehaviour {
         if (attackTimeCounter <= 0)
         {
             attacking = false;
-            SwordCollider.enabled = false;
             anim.SetBool("Attack", false);
         }
 
@@ -86,11 +82,6 @@ public class PlayerController : MonoBehaviour {
 		anim.SetFloat("LastMoveX", lastMove.x);
 		anim.SetFloat("LastMoveY", lastMove.y);
 	}
-
-    public void MeleeAttack()
-    {
-        SwordCollider.enabled = !SwordCollider.enabled;
-    }
 
     void debugKillEnemy(){
 		GameObject target = GameObject.Find("Enemy Unit(Ground)(Clone)");

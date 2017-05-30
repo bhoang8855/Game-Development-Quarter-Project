@@ -7,9 +7,10 @@ public class HurtTree : MonoBehaviour {
 	public int damageToGive;
 	public GameObject damageBurst;
 	public Transform hitPoint;
+    public AudioClip sound;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
 	}
 
@@ -23,6 +24,7 @@ public class HurtTree : MonoBehaviour {
 			other.gameObject.GetComponent<TreeHealthManager> ().HurtTree (damageToGive);
 			// Enable damage burst while hitting the enemy
 			Instantiate (damageBurst, transform.position, transform.rotation);
-		}
-	}
+            AudioSource.PlayClipAtPoint(sound, transform.position);
+        }
+    }
 }
