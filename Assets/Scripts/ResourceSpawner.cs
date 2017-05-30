@@ -11,7 +11,7 @@ public class ResourceSpawner : MonoBehaviour
 	public GameObject rock;
 	float randAngle;
 	Vector2 whereToSpawn;
-	public float spawnRate = 0.5f;
+	public float spawnRate = 0.5f;		//change in inspector
 	float nextSpawn = 0.0f;
 
 	// Use this for initialization
@@ -21,7 +21,7 @@ public class ResourceSpawner : MonoBehaviour
 		this.phaseSystemRef = (PhaseSystem) phaseSystem.GetComponent(typeof(PhaseSystem));
 
 		if (MAX_SPAWN_COUNT == 0)
-			MAX_SPAWN_COUNT = 50;
+			MAX_SPAWN_COUNT = 50;		//change maximum spawn count
 	}
 	
 	// Update is called once per frame
@@ -32,7 +32,7 @@ public class ResourceSpawner : MonoBehaviour
 			nextSpawn = Time.time + spawnRate;
 			do {
 				randAngle = Random.Range (0.0f, 2.0f * Mathf.PI);
-				whereToSpawn = new Vector2 (Random.Range(-5.0f,8.0f), Random.Range(-5.0f, 3.0f));
+				whereToSpawn = new Vector2 (Random.Range(-5.0f,8.0f), Random.Range(-5.0f, 3.0f));		//these are the play area bounds
 			} while (!checkIfPosEmpty (whereToSpawn));
 
 			float treeOrRock = Random.value;
