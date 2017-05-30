@@ -10627,6 +10627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   attackTime: 0.5
+  sound: {fileID: 8300000, guid: 6ceeda86cfd681744b424e9bf49c8c2d, type: 3}
 --- !u!95 &2063311604
 Animator:
   serializedVersion: 3
@@ -10714,6 +10715,7 @@ MonoBehaviour:
   dmg: {fileID: 1026699969348572, guid: 64f8d46af320f46ab845fa34c510d604, type: 2}
   meleeDamageTaken: 0
   projectileDamageTaken: 2
+  sound: {fileID: 8300000, guid: 3fa18ebb6ac39914491e8366687754d1, type: 3}
 --- !u!50 &2063311608
 Rigidbody2D:
   serializedVersion: 4

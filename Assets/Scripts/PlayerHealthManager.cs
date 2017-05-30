@@ -10,10 +10,11 @@ public class PlayerHealthManager : MonoBehaviour {
 	public int meleeDamageTaken;
 	public int projectileDamageTaken;
     private AudioSource playerHurt_sfx;
+    public AudioClip sound;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		playerCurrentHealth = playerMaxHealth;
         playerHurt_sfx = GetComponent<AudioSource>();
 	}
@@ -22,7 +23,8 @@ public class PlayerHealthManager : MonoBehaviour {
 	void Update () {
 		if (playerCurrentHealth <= 0) {
 			gameObject.SetActive (false);
-		}
+            AudioSource.PlayClipAtPoint(sound, transform.position);
+        }
 
 	}
 
