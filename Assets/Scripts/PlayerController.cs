@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour {
     public float attackTime;
     private float attackTimeCounter;
 
+    public AudioClip sound;
+
 
     // Use this for initialization
     void Start () {
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour {
                 attacking = true;
                 myRigidbody.velocity = Vector2.zero;
                 anim.SetBool("Attack", true);
+                AudioSource.PlayClipAtPoint(sound, transform.position);
             }
         }
 
