@@ -15242,7 +15242,7 @@ MonoBehaviour:
   damageToGive: 5
   damageBurst: {fileID: 1073098663692678, guid: cde011eb0abe24f17aeca0f69b58b81a,
     type: 2}
-  dmg: {fileID: 0}
+  dmg: {fileID: 1343129232359672, guid: ac564ff71f6934884ad624f0abe7710d, type: 2}
 --- !u!68 &1988585149
 EdgeCollider2D:
   m_ObjectHideFlags: 0
