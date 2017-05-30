@@ -23,10 +23,10 @@ GameObject:
   - component: {fileID: 212046391338630242}
   - component: {fileID: 50630866151054258}
   - component: {fileID: 58256295448350038}
-  - component: {fileID: 114450758209992118}
   - component: {fileID: 114492039423797538}
   - component: {fileID: 114985686129683410}
   - component: {fileID: 114272964713895012}
+  - component: {fileID: 114528958297231500}
   m_Layer: 0
   m_Name: Enemy Unit(Boss)
   m_TagString: Enemy
@@ -111,24 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToGive: 1
---- !u!114 &114450758209992118
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1132923507571134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e3f0d8a9a1feb54bbc0003390a73c79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  weapon: {fileID: 1749545226322364, guid: 4e487fc77525d584d8da77eda5fbf0e7, type: 2}
-  moveSpeed: 1
-  cooldown: 2
-  attackRange: 1
-  projectileSpeed: 2
-  playerDetectionRange: 2
 --- !u!114 &114492039423797538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +123,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToGive: 1
+--- !u!114 &114528958297231500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1132923507571134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c167eab24b2355145beceab1d54b0b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  weapon: {fileID: 1749545226322364, guid: 4e487fc77525d584d8da77eda5fbf0e7, type: 2}
+  moveSpeed: 1
+  cooldown: 2
+  attackRange: 1
+  projectileSpeed: 2
+  playerDetectionRange: 2
 --- !u!114 &114985686129683410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageTaken: 5
+  castleDamageTaken: 0
   MaxHealth: 100
   CurrentHealth: 0
   coin: {fileID: 1541377057898978, guid: 5528d97b5307d454e96dc00321e1925d, type: 2}
