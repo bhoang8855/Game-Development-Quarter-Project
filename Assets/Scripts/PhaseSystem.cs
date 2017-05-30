@@ -7,21 +7,21 @@ public class PhaseSystem : MonoBehaviour
 	private int enemiesDead;
 	private Countdown countdownRef;
 	private EnemySpawner enemySpawnerRef;
-	private bool battlePhase;
-	private bool gatherPhase;
-
+	public bool battlePhase;
+	public bool gatherPhase;
+	private int NUMWAVES;
 
 	// Use this for initialization
 	void Start ()
 	{
 		enemiesAlive = 0;
 		enemiesDead = 0;
+		NUMWAVES = 0;
 		GameObject countdown = GameObject.FindWithTag ("Countdown");
 		countdownRef = (Countdown) countdown.GetComponent(typeof(Countdown));
 		GameObject enemySpawner = GameObject.FindWithTag ("Enemy Spawner");
 		enemySpawnerRef = (EnemySpawner) enemySpawner.GetComponent(typeof(EnemySpawner));
-		battlePhase = true; //testing
-		gatherPhase = false;
+		startBattlePhase ();
 	}
 	
 	// Update is called once per frame
@@ -41,7 +41,10 @@ public class PhaseSystem : MonoBehaviour
 		enemiesAlive--;
 		enemiesDead++;
 		Debug.Log ("Enemies killed" + enemiesDead + "/" + enemySpawnerRef.getMaxSpawnCount ());
+	}
 
+	void startTimer(float time){
+		countdownRef.startTimer (time);
 	}
 
 	void startTimer(){
@@ -53,17 +56,24 @@ public class PhaseSystem : MonoBehaviour
 	}
 
 	void startGatherPhase(){
+		Debug.Log ("Gather Phase");
 		battlePhase = false;
 		gatherPhase = true;
-		startTimer ();
+		startTimer (30f);	//Timer for Gather Phase
 	}
 
 	void startBattlePhase(){
 		gatherPhase = false;
 		battlePhase = true;
-		enemySpawnerRef.startSpawner (7); //get wave count
-		enemiesAlive = 0;
+		NUMWAVES++;
+		Debug.Log ("Battle Phase - Wave #: " + NUMWAVES);
+		resetCounters();
+		enemySpawnerRef.startSpawner (5 + 2*(NUMWAVES - 1)); //MAX SPAWN = 5 + 2*NUMWAVES, e.g. Wave 1 = 5, 2 = 7, 3 = 9, etc.
+	}
+
+	void resetCounters(){
 		enemiesDead = 0;
+		enemiesAlive = 0;
 	}
 }
 
