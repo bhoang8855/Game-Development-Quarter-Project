@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if(MAX_SPAWN_COUNT == 0)
-			MAX_SPAWN_COUNT = 1000; //debugging
+			MAX_SPAWN_COUNT = 5; //debugging
 		//Debug.Log("Started, Max spawn Count is: "+MAX_SPAWN_COUNT);
 		GameObject phaseSystem = GameObject.FindWithTag ("Phase System");
 		this.phaseSystemRef = (PhaseSystem) phaseSystem.GetComponent(typeof(PhaseSystem));
@@ -41,7 +41,6 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	void spawnEnemy(GameObject enemy, Vector2 location){
-<<<<<<< HEAD
 		GameObject clone;
 		if (Random.value < 0.10)
         clone = Instantiate(boss, whereToSpawn, Quaternion.identity) as GameObject;
