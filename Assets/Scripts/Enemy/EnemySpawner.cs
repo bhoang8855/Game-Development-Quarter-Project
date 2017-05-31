@@ -42,14 +42,20 @@ public class EnemySpawner : MonoBehaviour {
 
 	void spawnEnemy(GameObject enemy, Vector2 location){
 		GameObject clone;
-		if (Random.value < 0.10)
-        clone = Instantiate(boss, whereToSpawn, Quaternion.identity) as GameObject;
-		else if (Random.value < 0.25)
-			clone = Instantiate(orc, whereToSpawn, Quaternion.identity) as GameObject;
-		else
-			clone = Instantiate(enemy, whereToSpawn, Quaternion.identity) as GameObject;
+        if (this.phaseSystemRef.NUMWAVES % 5 == 0) {
+            clone = Instantiate(boss, whereToSpawn, Quaternion.identity) as GameObject;
+            this.MAX_SPAWN_COUNT = 1;
+            spawnCount = getMaxSpawnCount() - 1;
+        }
+        else {
+            if (Random.value < 0.25)
+                clone = Instantiate(orc, whereToSpawn, Quaternion.identity) as GameObject;
+            else
+                clone = Instantiate(enemy, whereToSpawn, Quaternion.identity) as GameObject;
+        }
+
         //clone.transform.SetParent(GameObject.FindWithTag("Enemy").transform);
-		phaseSystemRef.addEnemy (clone);
+        phaseSystemRef.addEnemy (clone);
 		spawnCount++;
 		//Debug.Log ("Spawn count: " + spawnCount);
 	}

@@ -9,7 +9,7 @@ public class PhaseSystem : MonoBehaviour
 	private EnemySpawner enemySpawnerRef;
 	public bool battlePhase;
 	public bool gatherPhase;
-	private int NUMWAVES;
+	public int NUMWAVES;
 
 	// Use this for initialization
 	void Start ()

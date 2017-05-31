@@ -14,12 +14,16 @@ public class PlayerHealthManager : MonoBehaviour {
     public AudioClip sound;
 
     public GameObject GameOverText;
+    public PhaseSystem phaseRef;
+    private bool restoringHealth;
 
     // Use this for initialization
     void Start () {
 		playerCurrentHealth = playerMaxHealth;
         playerHurt_sfx = GetComponent<AudioSource>();
-	}
+        GameObject phaseSystem = GameObject.FindWithTag("Phase System");
+        this.phaseRef = (PhaseSystem)phaseSystem.GetComponent(typeof(PhaseSystem));
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,6 +32,19 @@ public class PlayerHealthManager : MonoBehaviour {
             AudioSource.PlayClipAtPoint(sound, transform.position);
             GameOverText.SetActive(true);
             Invoke("Restart", 3f);
+        }
+
+        //restore health here
+        if (phaseRef.gatherPhase && !restoringHealth) {
+            playerCurrentHealth += 10;
+            if (playerCurrentHealth < playerMaxHealth) {
+                playerCurrentHealth = playerMaxHealth;
+            }
+            restoringHealth = true;
+        }
+
+        if (phaseRef.battlePhase) {
+            restoringHealth = false;
         }
 
 	}
