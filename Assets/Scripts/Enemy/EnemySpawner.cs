@@ -42,7 +42,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void spawnEnemy(GameObject enemy, Vector2 location){
 		GameObject clone;
-		if (Random.value < 0.10)
+		if (Random.value < 0.07)
         clone = Instantiate(boss, whereToSpawn, Quaternion.identity) as GameObject;
 		else if (Random.value < 0.25)
 			clone = Instantiate(orc, whereToSpawn, Quaternion.identity) as GameObject;

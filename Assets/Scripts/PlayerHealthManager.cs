@@ -6,10 +6,14 @@ using UnityEngine.SceneManagement;
 public class PlayerHealthManager : MonoBehaviour {
 
 	public int playerMaxHealth;
-	public int playerCurrentHealth;
+	public float playerCurrentHealth;
 	public GameObject dmg;
 	public int meleeDamageTaken;
 	public int projectileDamageTaken;
+
+    public int healthReg;
+    bool healing;
+
     private AudioSource playerHurt_sfx;
     public AudioClip sound;
 
@@ -29,7 +33,10 @@ public class PlayerHealthManager : MonoBehaviour {
             GameOverText.SetActive(true);
             Invoke("Restart", 3f);
         }
-
+        if(playerCurrentHealth != playerMaxHealth && !healing)
+        {
+            StartCoroutine(RegainHealthOverTime());
+        }
 	}
 
     void Restart()
@@ -45,6 +52,20 @@ public class PlayerHealthManager : MonoBehaviour {
 		playerCurrentHealth = playerMaxHealth;
 	}
 
+    private IEnumerator RegainHealthOverTime()
+    {
+        healing = true;
+        while(playerCurrentHealth < playerMaxHealth)
+        {
+            HealthRegen();
+            yield return new WaitForSeconds(3);
+        }
+    }
+
+    public void HealthRegen()
+    {
+        playerCurrentHealth += healthReg;
+    }
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Enemy") {
