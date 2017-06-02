@@ -28,6 +28,7 @@ public class PlayerHealthManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (playerCurrentHealth <= 0) {
+            playerCurrentHealth = 0;
 			gameObject.SetActive (false);
             AudioSource.PlayClipAtPoint(sound, transform.position);
             GameOverText.SetActive(true);
