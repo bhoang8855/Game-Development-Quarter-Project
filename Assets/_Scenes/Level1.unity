@@ -791,7 +791,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 127831145}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.61, y: 0, z: -10}
+  m_LocalPosition: {x: -1.61, y: 0, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7259,6 +7259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battlePhase: 0
   gatherPhase: 0
+  NUMWAVES: 0
 --- !u!4 &1404220746
 Transform:
   m_ObjectHideFlags: 0
@@ -11062,6 +11063,7 @@ MonoBehaviour:
   projectileDamageTaken: 4
   sound: {fileID: 8300000, guid: 3fa18ebb6ac39914491e8366687754d1, type: 3}
   GameOverText: {fileID: 1394615417}
+  phaseRef: {fileID: 0}
 --- !u!50 &2063311608
 Rigidbody2D:
   serializedVersion: 4
